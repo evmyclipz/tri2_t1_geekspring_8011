@@ -1,4 +1,4 @@
-package com.nighthawk.spring_portfolio.mvc.lightboard;
+package com.nighthawk.spring_portfolio.mvc.Lightboard;
 
 import java.util.HashMap;
 import java.util.Map;
