@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.net.http.HttpHeaders;
 
 import java.util.*;
 
@@ -41,8 +42,11 @@ public class CalculatorController {
     {
         calc = new Calculator(exp);
         System.out.println(exp);
-        
-        return new ResponseEntity<>(calc.toString(), HttpStatus.CREATED);
+    
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Access-Control-Allow-Origin", "*");
+
+        return new ResponseEntity<>(calc.toString(), headers, HttpStatus.CREATED);
     }
 
    
