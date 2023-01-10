@@ -10,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 @SpringBootApplication
 public class Main {
 
+/*
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
@@ -19,7 +20,7 @@ public class Main {
             }
         };
     }
-
+*/
     // Starts a spring application as a stand-alone application from the main method
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);

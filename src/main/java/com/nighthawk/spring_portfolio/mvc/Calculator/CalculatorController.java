@@ -1,12 +1,8 @@
 package com.nighthawk.spring_portfolio.mvc.Calculator;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.http.HttpHeaders;
-import org.springframework.util.MultiValueMap;
 
 
 @RestController
@@ -43,10 +39,8 @@ public class CalculatorController {
         calc = new Calculator(exp);
         System.out.println(exp);
     
-        MultiValueMap<String, String> headers = new HttpHeaders();
-        headers.add("Access-Control-Allow-Origin", "*");
 
-        return new ResponseEntity<>(calc.toString(), headers, HttpStatus.CREATED);
+        return new ResponseEntity<>(calc.toString(), HttpStatus.CREATED);
     }
 
    
