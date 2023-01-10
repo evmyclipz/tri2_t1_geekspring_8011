@@ -287,11 +287,12 @@ public class Calculator {
 
     // Print the expression, terms, and result
     public String toString() {
-        return ("Original expression: " + this.expression + "\n" +
-                "Expression is Balanced: " + this.isBalanced() + "\n" +
-                "Tokenized expression: " + this.tokens.toString() + "\n" +
-                "Reverse Polish Notation: " +this.reverse_polish.toString() + "\n" +
-                "Final result: " + String.format("%.2f", this.result));
+        return ("{ \"Original expression\":" + this.expression +
+                ", \"Expression is Balanced\":" + this.isBalanced() +
+                ", \"Tokenized expression\":" + this.tokens.toString() +
+                ", \"Reverse Polish Notation\":" + this.reverse_polish.toString() +
+                ", \"Final result\":" + String.format("%.2f", this.result) +
+                " }");
     }
 
     // Tester method
