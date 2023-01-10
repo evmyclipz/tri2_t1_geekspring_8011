@@ -1,38 +1,144 @@
-<!DOCTYPE HTML>
-<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
-      layout:decorate="~{layouts/base}" lang="en">
-
-<head>
-    <title>Birds</title>
-</head>
-
-<body>
-<th:block layout:fragment="body" th:remove="tag">
-    <!-- Start of body content specific to page -->
-    <div class="px-4 py-5 my-5">
-        <h3 class="display-5 fw-bold">Birds</h3>
-    </div>
-    <!-- End of body content specific to page -->
-</th:block>
-</body>
-
-<th:block layout:fragment="script" th:remove="tag">
-<!-- Start of custom script specific to page -->
-<script src="/static/vanta/three.r119.min.js" th:src="@{/vanta/three.r119.min.js}"></script>
-<script src="/static/vanta/vanta.birds.min.js" th:src="@{/vanta/vanta.birds.min.js}"></script>
-<script>
-    VANTA.BIRDS({
-        el: "body",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00
-    })
-</script>
-<!-- End of custom script specific to page -->
-</th:block>
-
-</html>
+<!-- 
+  _layouts/default.html
+  customization to original Midnight theme 
+  found through GitHub Pages Themes
+ -->
+ <html lang="en-US">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+      <!-- Begin Jekyll SEO tag v2.8.0 -->
+  <title>FRQ3 - Calculator | Tri 2 Team Project</title>
+  <meta name="generator" content="Jekyll v3.9.2" />
+  <meta property="og:title" content="FRQ3 - Calculator" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="description" content="To be filled in" />
+  <meta property="og:description" content="To be filled in" />
+  <link rel="canonical" href="https://natalie-beckwith.github.io/Tri2TeamProject/frq3.html" />
+  <meta property="og:url" content="https://natalie-beckwith.github.io/Tri2TeamProject/frq3.html" />
+  <meta property="og:site_name" content="Tri 2 Team Project" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:title" content="FRQ3 - Calculator" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","description":"To be filled in","headline":"FRQ3 - Calculator","url":"https://natalie-beckwith.github.io/Tri2TeamProject/frq3.html"}</script>
+  <!-- End Jekyll SEO tag -->
+  
+      <link rel="stylesheet" href="/Tri2TeamProject/assets/css/style.css?v=9528f0c118321084e0b796339976206f85ffdbc7">
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+      <!--<script src="/Tri2TeamProject/assets/js/respond.js"></script>-->
+      <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      <!--[if lt IE 8]>
+      <link rel="stylesheet" href="/Tri2TeamProject/assets/css/ie.css">
+      <![endif]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+  
+  <!-- Setup Google Analytics -->
+  
+  
+  
+  <!-- You can set your favicon here -->
+  <!-- link rel="shortcut icon" type="image/x-icon" href="/Tri2TeamProject/favicon.ico" -->
+  
+  <!-- end custom head snippets -->
+  
+  
+    </head>
+    <body>
+        
+      <div class="wrapper">
+  
+        <section>
+          <!-- nighthawk coding society has altered arrangement and inserted navigation that is updated in independent file -->
+          <div style="background-color: rgb(22, 28, 47);" id="title">
+            <h1><a href=https://github.com/Natalie-Beckwith/Tri2TeamProject >Tri 2 Team Project</a></h1>
+            <p style="text-align: center;">To be filled in</p>
+            <hr>
+            <table style="margin-left: auto; margin-right: auto;">
+      <tr>
+          <td><a href="/Tri2TeamProject">Home</a>&nbsp;&nbsp;&nbsp;</td>
+          <td>
+              <div class="dropdown">
+                  <button class="dropdown-button">FRQs</button>
+                  <div class="dropdown-options">
+                      <a href="frq1">FRQ #1</a>
+                      <a href="frq2">FRQ #2</a>
+                      <a href="frq3">FRQ #3</a>
+                      <a href="frq4">FRQ #4</a>
+                  </div>
+              </div>
+          </td>
+      </tr>
+  </table>
+  
+            <br>
+          </div>
+  
+          <!-- this is Jekyll magic, each md file in site will be inserted here -->
+          <h1 id="frq3---calculator">FRQ3 - Calculator</h1>
+  
+  <form id="form">
+    <label for="input">Input:</label><br />
+    <input type="text" id="input" name="input" /><br />
+    <button type="submit" id="submit-button">Submit</button>
+  </form>
+  
+  <p><br /></p>
+  
+  <h2 id="results">Results</h2>
+  <!--- Table of results -->
+  <table id="table">
+    <tr>
+      <th>Input</th>
+      <th>Tokens</th> 
+      <th>Postfix</th>
+      <th>Calculation</th>
+    </tr>
+  </table>
+  
+  <!--- Access API -->
+  <script>
+    document.getElementById('form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      let input = document.getElementById('input').value;
+  
+      // POST
+      const url = 'https://blognorte.tk/api/calculator/create?exp='+input;
+      fetch(url, {method: 'POST',});
+  
+      // GET
+      fetch("https://blognorte.tk/api/calculator", {
+        method: 'GET',
+        mode: 'no-cors',
+        headers: {
+           'User-Agent': 'curl/7.68.0',
+           'Accept': '*/*'
+        }})
+        .then(response => response.json())
+        .then(data => {
+          const table = document.getElementById('table');
+          const row = table.insertRow(-1);
+          const inputCell = row.insertCell(0);
+          const tokensCell = row.insertCell(1);
+          const postfixCell = row.insertCell(2);
+          const resultCell = row.insertCell(3);
+          // Print data to table
+          inputCell.innerHTML = data.expression;
+          tokensCell.innerHTML = data.tokens;
+          rpnCell.innerHTML = data.reverse_polish;
+          resultCell.innerHTML = data.result;
+        });
+    });
+  </script>
+  
+  
+  
+        </section>
+  
+      </div>
+    </body>
+  </html>
