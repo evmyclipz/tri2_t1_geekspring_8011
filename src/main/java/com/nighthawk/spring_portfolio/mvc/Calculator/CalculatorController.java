@@ -42,7 +42,7 @@ public class CalculatorController {
         calc = new Calculator(exp);
         System.out.println(exp);
         
-        return new ResponseEntity<>("Calculator Creater successfully", HttpStatus.CREATED);
+        return new ResponseEntity<>(calc.toString(), HttpStatus.CREATED);
     }
 
    
