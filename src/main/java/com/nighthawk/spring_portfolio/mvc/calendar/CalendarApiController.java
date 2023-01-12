@@ -5,6 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+<<<<<<< HEAD
+=======
+import org.springframework.util.MultiValueMap;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+>>>>>>> d3a3c18692542a87f52e2011a8d95be13c062938
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -84,7 +90,6 @@ public class CalendarApiController {
       //Turn Year object into JSON
       ObjectMapper mapper = new ObjectMapper();
       JsonNode json = mapper.readTree(year_obj4.numberOfLeapYearsToString());
-
       
       return ResponseEntity.ok(json);
     }
