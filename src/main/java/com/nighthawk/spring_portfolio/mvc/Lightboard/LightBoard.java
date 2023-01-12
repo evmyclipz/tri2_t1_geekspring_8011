@@ -109,7 +109,7 @@ public class LightBoard {
 
     /* Output is intended for API key/values */
     public String toString() { 
-        String outString = "[";
+        String outString = "{\"data\":[";
         // 2D array nested loops, used for reference
         for (int row = 0; row < lights.length; row++) {
             for (int col = 0; col < lights[row].length; col++) {
@@ -123,11 +123,11 @@ public class LightBoard {
                 "}," +
                 // newline
                 "\n" ;
-                
+                S
             }
         }
         // remove last comma, newline, add square bracket, reset color
-        outString = outString.substring(0,outString.length() - 1) + "]";
+        outString = outString.substring(0,outString.length() - 2) + "]}";
 		return outString;
     }
 
@@ -220,7 +220,7 @@ public class LightBoard {
         // create and display LightBoard
         LightBoard lightBoard = new LightBoard(5, 5, 0);
         System.out.println(lightBoard);  // use toString() method
-        System.out.println(lightBoard.toTerminal());
-        System.out.println(lightBoard.toColorPalette());
+        //System.out.println(lightBoard.toTerminal());
+        //System.out.println(lightBoard.toColorPalette());
     }
 }
