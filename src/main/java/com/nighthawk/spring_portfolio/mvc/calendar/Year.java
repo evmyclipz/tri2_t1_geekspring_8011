@@ -87,9 +87,9 @@ class Year {
 
 
    public String numberOfLeapYearsToString() {
-      return ("{ \"Year1\":"  +this.year1+
-               ", \"Year2\":"  +this.year2+ 
-               ", \"No. of Leap Years are\":" +this.nolp+
+      return ("{ \"year1\":"  +this.year1+
+               ", \"year2\":"  +this.year2+ 
+               ", \"numberOfLeapYears\":" +this.nolp+
                " }");
    }
 
