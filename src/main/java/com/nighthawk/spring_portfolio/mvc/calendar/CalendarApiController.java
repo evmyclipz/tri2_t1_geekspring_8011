@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.util.MultiValueMap;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -90,7 +91,7 @@ public class CalendarApiController {
       MultiValueMap<String, String> headers = new HttpHeaders();
       headers.add("Access-Control-Allow-Origin", "*");
 
-      return ResponseEntity.ok(json).headers(headers);
+      return new ResponseEntity<JsonNode>(json, headers, HttpStatus.OK);
     }
 
     /*
