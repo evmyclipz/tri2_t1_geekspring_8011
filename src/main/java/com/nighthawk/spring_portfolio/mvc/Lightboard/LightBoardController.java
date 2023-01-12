@@ -21,6 +21,7 @@ public class LightBoardController {
      */
     @GetMapping("/")
     public String getLightBoard() {
+        lightBoard  = new LightBoard(4, 8, 0);
         
         return lightBoard.toString();
     }
