@@ -14,14 +14,14 @@ public class LightBoardController {
     
 
     //private LightBoard lightBoard = new LightBoard(5, 7);
-    private LightBoard lightBoard; 
+    private LightBoard lightBoard  = new LightBoard(4, 8, 0);
+        
 
     /*
     GET List of People
      */
     @GetMapping("/")
     public String getLightBoard() {
-        lightBoard  = new LightBoard(4, 8, 0);
         
         return lightBoard.toString();
     }
