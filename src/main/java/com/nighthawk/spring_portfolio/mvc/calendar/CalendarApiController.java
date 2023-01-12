@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.util.MultiValueMap;
+import org.springframework.http.HttpHeaders;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -85,7 +87,10 @@ public class CalendarApiController {
       ObjectMapper mapper = new ObjectMapper();
       JsonNode json = mapper.readTree(year_obj4.numberOfLeapYearsToString());
 
-      return ResponseEntity.ok(json);
+      MultiValueMap<String, String> headers = new HttpHeaders();
+      headers.add("Access-Control-Allow-Origin", "*");
+
+      return ResponseEntity.ok(json).headers(headers);
     }
 
     /*
