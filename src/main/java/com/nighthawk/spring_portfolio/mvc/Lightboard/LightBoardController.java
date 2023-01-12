@@ -39,7 +39,7 @@ public class LightBoardController {
     }
 
     @PostMapping( "/makeBoard")
-    public ResponseEntity<Object> postLightBoard(@RequestParam("rows") int rows, @RequestParam("columms") int columms,@RequestParam("diffcolor")int diffcolor) 
+    public ResponseEntity<Object> postLightBoard(@RequestParam("rows") int rows, @RequestParam("columms") int columms,@RequestParam("diffcolor") int diffcolor) 
     {
         lightBoard  = new LightBoard(rows, columms, diffcolor);
         
