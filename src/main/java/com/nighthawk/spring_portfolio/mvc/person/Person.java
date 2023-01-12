@@ -58,20 +58,20 @@ public class Person {
     private String password;
 
     // @NonNull, etc placed in params of constructor: "@NonNull @Size(min = 2, max = 30, message = "Name (2 to 30 chars)") String name"
-    @NonNull
+    //@NonNull
     @Size(min = 2, max = 30, message = "Name (2 to 30 chars)")
     private String name;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dob;
 
-    @NonNull
+    //@NonNull
     private int height; 
     
-    @NonNull
+    //@NonNull
     private int weight;
     
-    @NonNull
+    //@NonNull
     private int freetime;
     
     /* HashMap is used to store JSON for daily "stats"

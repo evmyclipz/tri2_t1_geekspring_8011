@@ -123,7 +123,7 @@ public class LightBoard {
                 "}," +
                 // newline
                 "\n" ;
-                S
+                
             }
         }
         // remove last comma, newline, add square bracket, reset color
