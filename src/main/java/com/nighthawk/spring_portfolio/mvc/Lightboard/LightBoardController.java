@@ -43,7 +43,8 @@ public class LightBoardController {
     {
         lightBoard  = new LightBoard(rows, columms, diffcolor);
         
-        return new ResponseEntity<>("LightBoard is created successfully", HttpStatus.CREATED);
+        return new ResponseEntity<>(lightBoard.toString(), HttpStatus.CREATED);
+        //return new ResponseEntity<>("LightBoard is created successfully", HttpStatus.CREATED);
     }
 
 
