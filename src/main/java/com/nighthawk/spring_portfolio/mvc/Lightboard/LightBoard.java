@@ -116,7 +116,7 @@ public class LightBoard {
                 outString += 
                 // data
                 "{" +
-                "\"Light on\": " + lights[row][col].isOn() + 
+                "\"LightOn\": " + lights[row][col].isOn() + ","+
                 "\"row\": " + row + "," +
                 "\"column\": " + col + "," +
                 "\"light\": " + lights[row][col] +   // extract toString data
